@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    @routes
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -14,6 +15,7 @@
 
     @vite('resources/js/app.js')
     @inertiaHead
+
 
     <!--plugins-->
     @yield("style")
@@ -38,7 +40,7 @@
     <link rel="stylesheet" href="assets/css/semi-dark.css"/>
     <link rel="stylesheet" href="assets/css/header-colors.css"/>
     <title>Rocker - Laravel 10 & Bootstrap 5 Admin Dashboard Template</title>
-    @routes
+
 
 </head>
 <body>
@@ -70,6 +72,7 @@
 <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
 <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
 <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+
 <script src="assets/js/app.js"></script>
 </body>
 </html>

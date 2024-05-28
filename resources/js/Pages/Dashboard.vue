@@ -1,11 +1,13 @@
 <script setup>
 
-console.log('Hola desde el setup');
-
 </script>
 
 <template>
-        <h1 class="texto">HOLA DESDE EL RENDER</h1>
+
+    <div class="page-content">
+        <h1 class="texto">hola desde el render</h1>
+    </div>
+
 </template>
 
 <style scoped>

@@ -24,5 +24,11 @@ export default defineConfig({
     resolve: name => {
         const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
         return pages[`./Pages/${name}.vue`]
+
     },
+    // resolve: {
+    //     alias: {
+    //         'ziggy-js': path.resolve('vendor/tightenco/ziggy/dist/vue.es.js'),
+    //     }
+    // },
 });
