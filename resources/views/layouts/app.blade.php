@@ -11,8 +11,9 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
 
 
-    @vite(['resources/js/app.js', 'resources/css/app.css.js'])
 
+    @vite('resources/js/app.js')
+    @inertiaHead
 
     <!--plugins-->
     @yield("style")
@@ -47,7 +48,10 @@
 
     @include("layouts.partials.nav")
 
-    @yield("wrapper")
+{{--    @yield("wrapper")--}}
+    <div class="page-wrapper">
+        @inertia
+    </div>
     <div class="overlay toggle-icon"></div>
 
     <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>

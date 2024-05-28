@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
 @section('wrapper')
-    <h1>logueado!</h1>
+    <div class="page-wrapper">
+        <h1>logueado</h1>
+
+    </div>
 @endsection
