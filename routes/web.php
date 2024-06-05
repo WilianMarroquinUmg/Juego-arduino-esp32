@@ -26,18 +26,20 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-
 Route::middleware('auth')->group(function () {
 
 
     require __DIR__ . '/rutas_configuraciones/rutas_perfil.php';
 
-  Route::get('iniciar', [App\Http\Controllers\ManejarJugadorActualController::class, 'index'])->name('iniciar.juego');
+    Route::get('iniciar', [App\Http\Controllers\ManejarJugadorActualController::class, 'index'])->name('iniciar.juego');
+
     Route::get('terminar', [App\Http\Controllers\ManejarJugadorActualController::class, 'terminarJuego'])->name('terminar.juego');
 
+    Route::get('iniciar/juego', [App\Http\Controllers\ManejarJugadorActualController::class, 'IniciarJuegoAplicacion'])->name('iniciar.juego.aplicacion');
 
+    Route::get('terminar/juego', [App\Http\Controllers\ManejarJugadorActualController::class, 'terminarJuegoAplicacion'])->name('terminar.juego.aplicacion');
 
 
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

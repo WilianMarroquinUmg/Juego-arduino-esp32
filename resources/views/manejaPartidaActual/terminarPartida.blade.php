@@ -15,7 +15,7 @@
                         <hr>
                         <div class="d-flex align-items-center gap-2">
                             <a href="javascript:;" class="btn btn-inverse-danger"><i class="lni lni-ban"></i>Cancelar</a>
-                            <a href="javascript:;" class="btn btn-danger"><i class="lni lni-star-filled"></i>Terminar</a>
+                            <a href="{{route('terminar.juego.aplicacion')}}" class="btn btn-danger"><i class="lni lni-star-filled"></i>Terminar</a>
                         </div>
                     </div>
                 </div>
