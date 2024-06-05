@@ -13,8 +13,8 @@
 
 
 
-    @vite('resources/js/app.js')
-    @inertiaHead
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
+{{--    @inertiaHead--}}
 
 
     <!--plugins-->
@@ -50,10 +50,8 @@
 
     @include("layouts.partials.nav")
 
-{{--    @yield("wrapper")--}}
-    <div class="page-wrapper">
-        @inertia
-    </div>
+        @yield("wrapper")
+
     <div class="overlay toggle-icon"></div>
 
     <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>

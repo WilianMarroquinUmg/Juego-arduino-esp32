@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/iniciar/juego', [App\Http\Controllers\NivelController::class, 'iniciarJuego']);
+Route::get('/nivel/uno', [App\Http\Controllers\NivelController::class, 'NivelUno']);
+Route::get('/nivel/dos', [App\Http\Controllers\NivelController::class, 'NivelDos']);
+Route::get('/nivel/tres', [App\Http\Controllers\NivelController::class, 'NivelTres']);
+

@@ -21,14 +21,21 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-//    return view('dashboard');
+//    return Inertia::render('Dashboard');
+    return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::middleware('auth')->group(function () {
 
 
     require __DIR__ . '/rutas_configuraciones/rutas_perfil.php';
+
+  Route::get('iniciar', [App\Http\Controllers\ManejarJugadorActualController::class, 'index'])->name('iniciar.juego');
+    Route::get('terminar', [App\Http\Controllers\ManejarJugadorActualController::class, 'terminarJuego'])->name('terminar.juego');
+
+
 
 
 });

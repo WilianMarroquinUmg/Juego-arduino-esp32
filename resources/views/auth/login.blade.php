@@ -22,7 +22,7 @@
                                     <div class="d-grid">
                                         <a class="btn my-4 shadow-sm btn-white" href="javascript:;"> <span
                                                 class="d-flex justify-content-center align-items-center">
-                          <img class="me-2" src="assets/images/icons/search.svg" width="16" alt="Image Description">
+                          <img class="me-2" src="https://pbs.twimg.com/profile_images/1311763847775125516/mvBRhlDs_400x400.jpg" width="16" alt="Image Description">
                           <span>Sign in with Google</span>
 											</span>
                                         </a> <a href="javascript:;" class="btn btn-facebook"><i class="bx bxl-facebook"></i>Sign

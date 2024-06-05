@@ -42,4 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function partidas()
+    {
+        return $this->hasMany(Partida::class, 'user_id' , 'id');
+    }
+
 }
