@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\enviarEmail;
+use App\Mail\nivelFinal;
+use App\Mail\primerNivel;
+use App\Mail\segundoNivel;
 use App\Models\JugadorActual;
 use App\Models\Partida;
 use App\Models\User;
+use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class NivelController extends Controller
 {
-
     public function iniciarJuego()
     {
 
@@ -19,6 +24,9 @@ class NivelController extends Controller
             ->orderBy('id', 'desc')
             ->get()
             ->first();
+
+        $correo = new enviarEmail();
+        Mail::to($jugador->user->email)->send($correo);
 
         Partida::create([
             'fecha_inicio' => now(),
@@ -38,6 +46,9 @@ class NivelController extends Controller
             ->orderBy('id', 'desc')
             ->get()
             ->first();
+
+        $correo = new primerNivel();
+        Mail::to($jugador->user->email)->send($correo);
 
         $partida = User::whereId($jugador->user_id)
             ->first()
@@ -63,6 +74,9 @@ class NivelController extends Controller
             ->get()
             ->first();
 
+        $correo = new segundoNivel();
+        Mail::to($jugador->user->email)->send($correo);
+
         $partida = User::whereId($jugador->user_id)
             ->first()
             ->partidas()
@@ -87,6 +101,9 @@ class NivelController extends Controller
             ->get()
             ->first();
 
+        $correo = new nivelFinal();
+        Mail::to($jugador->user->email)->send($correo);
+
         $partida = User::whereId($jugador->user_id)
             ->first()
             ->partidas()
@@ -103,3 +120,9 @@ class NivelController extends Controller
         ]);
     }
 }
+
+
+
+
+
+

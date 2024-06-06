@@ -39,7 +39,10 @@ Route::middleware('auth')->group(function () {
 
     Route::get('terminar/juego', [App\Http\Controllers\ManejarJugadorActualController::class, 'terminarJuegoAplicacion'])->name('terminar.juego.aplicacion');
 
+    Route::get('ver/mejor/puntuacion', [App\Http\Controllers\ManejarJugadorActualController::class, 'terminarJuegoAplicacion'])->name('mejorPuntuacion');
+
 
 });
 
 require __DIR__ . '/auth.php';
+

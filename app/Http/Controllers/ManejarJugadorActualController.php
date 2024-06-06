@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\JugadorActual;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use mysql_xdevapi\Collection;
 use function PHPUnit\Framework\isEmpty;
 
 class ManejarJugadorActualController extends Controller
@@ -28,7 +29,17 @@ class ManejarJugadorActualController extends Controller
 
     public function terminarJuego()
     {
-        return view('manejaPartidaActual.terminarPartida');
+        /**
+         * @var JugadorActual $jugadorActual
+         */
+
+        $jugadorActual = JugadorActual::query()
+            ->orderBy('id', 'desc')
+            ->get();
+
+        $jugadorActual = $jugadorActual->where('esta_jugando', true);
+
+        return view('manejaPartidaActual.terminarPartida', compact('jugadorActual'));
 
     }
 

@@ -17,4 +17,10 @@ class JugadorActual extends Model
         'esta_jugando'
     ];
 
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+
+    }
+
 }
